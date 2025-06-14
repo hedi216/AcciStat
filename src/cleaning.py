@@ -6,7 +6,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 def load_and_clean_data(year: int, raw_data_path: str = "../data", cleaned_data_path: str = "data/cleaned", archive_path: str = "../archive") -> pd.DataFrame:
     try:
-        engine = create_engine("mysql+pymysql://root:@localhost/accidents")
+        engine = create_engine("mysql+pymysql://root:1234@localhost/accidents")
         with engine.connect() as conn:
             result = conn.execute(text("SELECT COUNT(*) FROM caracteristiques WHERE annee = :year"), {"year": year})
             if result.scalar() > 0:

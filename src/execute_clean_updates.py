@@ -6,7 +6,7 @@ from sqlalchemy import create_engine, text
 
 # Configuration
 RAW_DATA_DIR = "../data"
-DB_URL = "mysql+pymysql://root:@localhost/accidents"
+DB_URL = "mysql+pymysql://root:1234@localhost/accidents"
 
 def get_latest_year_in_db():
     try:
